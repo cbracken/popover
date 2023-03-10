@@ -5,11 +5,12 @@ import FlutterMacOS
 class AppDelegate: FlutterAppDelegate {
 
   var statusBar: StatusBarController?
-  var popover = NSPopover.init()
+  var popover = MyPopover.init()
 
   override func applicationDidFinishLaunching(_ notification: Notification) {
     popover.contentSize = NSSize(width: 360, height: 360)
     popover.contentViewController = FlutterViewController()
+    //popover.contentViewController = TestViewController()
     statusBar = StatusBarController.init(popover)
   }
 
